@@ -1,0 +1,15 @@
+<proxy xmlns="http://ws.apache.org/ns/synapse"
+       name="HelloWorldProxy"
+       transports="http https"
+       startOnLoad="true"
+       trace="enable">
+    <target>
+        <inSequence>
+            <log level="full"/>
+            <payloadFactory media-type="json">
+                <format>{"message":"Hello from WSO2 Micro Integrator!"}</format>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+    </target>
+</proxy>
